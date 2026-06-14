@@ -3,7 +3,6 @@ import { invoke } from "@tauri-apps/api/core";
 import { load } from "@tauri-apps/plugin-store";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthWizard } from "./components/shared/AuthWizard";
-import { AdGateway } from "./components/shared/AdGateway";
 import { ErrorBoundary } from "./components/shared/ErrorBoundary";
 import { UpdateBanner } from "./components/shared/UpdateBanner";
 import { useUpdateCheck } from "./hooks/useUpdateCheck";
@@ -24,7 +23,7 @@ import { useSettings } from "./context/SettingsContext";
 
 const queryClient = new QueryClient();
 
-type AuthStatus = "loading" | "authenticated" | "unauthenticated" | "ad-gateway";
+type AuthStatus = "loading" | "authenticated" | "unauthenticated";
 
 function AppContent() {
   const [authStatus, setAuthStatus] = useState<AuthStatus>("loading");
@@ -84,13 +83,8 @@ function AppContent() {
         // Verify the session is still valid with Telegram servers
         const ok = await invoke<boolean>("cmd_check_connection");
         if (ok) {
-          // Check if user already passed the ad gateway — skip it if so
-          const gatewayPassed = await store.get<boolean>("ad_gateway_passed");
-          if (gatewayPassed) {
-            setAuthStatus("authenticated");
-          } else {
-            setAuthStatus("ad-gateway");
-          }
+          // Skip ad gateway - go directly to authenticated
+          setAuthStatus("authenticated");
         } else {
           setAuthStatus("unauthenticated");
         }
@@ -176,9 +170,6 @@ function AppContent() {
         onDismiss={dismissUpdate}
       />
       <Toaster theme={theme} position="bottom-center" />
-      {authStatus === "ad-gateway" && (
-        <AdGateway onContinue={() => setAuthStatus("authenticated")} />
-      )}
       {authStatus === "authenticated" && (
         <Suspense fallback={
           <div className="h-screen w-screen flex flex-col items-center justify-center bg-telegram-bg">
@@ -197,7 +188,7 @@ function AppContent() {
         </Suspense>
       )}
       {authStatus === "unauthenticated" && (
-        <AuthWizard onLogin={() => setAuthStatus("ad-gateway")} />
+        <AuthWizard onLogin={() => setAuthStatus("authenticated")} />
       )}
     </main>
   );
