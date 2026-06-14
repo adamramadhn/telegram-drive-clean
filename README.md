@@ -8,10 +8,7 @@ your Telegram account into an unlimited, secure cloud storage drive. Built with
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20MacOS%20%7C%20Linux-blue)]()
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/caamer20/Telegram-Drive/total?style=flat)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/ae8e5a6b-e815-4799-a408-4a59980cf9c8.svg)](https://oosmetrics.com/repo/caamer20/Telegram-Drive)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/029fb97b-a54a-4566-a1eb-aa1a5039065d.svg)](https://oosmetrics.com/repo/caamer20/Telegram-Drive)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/2aa6f3f9-fd8a-4523-bd73-6625ee6a948a.svg)](https://oosmetrics.com/repo/caamer20/Telegram-Drive)
+
 
 </div>
 
@@ -36,29 +33,7 @@ Telegram Drive leverages the Telegram API to allow you to upload, organize, and 
 *   **Proxy Support**: Native integration for SOCKS5 and MTProto proxies to bypass regional restrictions and secure your traffic.
 *   **VPN Optimizer**: Aggressive network tuning including bandwidth throttling, adjustable transfer chunk sizing, and adaptive keep-alives to ensure maximum stability on high-latency connections.
 *   **Privacy Focused**: API keys and data stay local. No third-party servers.
-*   **Cross-Platform**: Native apps for macOS (Intel/ARM), Windows, Linux and Android.
-
-## Android (Pre‑built, Unsigned APK)
-
-A pre-built **unsigned APK** is available for Android sideloading via the [v2.1.5-android release](https://github.com/caamer20/Telegram-Drive/releases/tag/Androidv2.1.5beta).
-
-> [!WARNING]
-> This APK is **not signed** and is **not available on the Google Play Store**. You must enable "Install from Unknown Sources" on your device to install it. This build contains **Google AdMob banner ads** to support development.
-
-### How to Sideload
-
-1. Download `Telegram-Drive-v2.1.0-beta.apk` from the [v2.1.5-android release](https://github.com/caamer20/Telegram-Drive/releases/tag/Androidv2.1.5beta).
-2. On your Android device, go to **Settings → Apps → Special App Access → Install unknown apps** and allow your browser or file manager.
-3. Open the downloaded APK and tap **Install**.
-4. Enter your Telegram API credentials on first launch (same as the desktop app).
-
-> [!NOTE]
-> - **Compatibility**: Requires **Android 7.0 (API level 24)** or higher.
-> - **Android 15+ Installation**: If you encounter blocks or security restrictions when installing on Android 15+ emulator/device, bypass it using ADB:
->   ```bash
->   adb install --bypass-low-target-sdk-block Telegram-Drive-v2.1.0-beta.apk
->   ```
-> - The Android build is a **community/beta release** compiled locally. The desktop app (Windows/macOS/Linux) remains the primary supported platform, built and signed automatically by GitHub CI.
+*   **Cross-Platform**: Native apps for macOS (Intel/ARM), Windows, and Linux.
 
 ---
 
@@ -78,23 +53,13 @@ A pre-built **unsigned APK** is available for Android sideloading via the [v2.1.
 |----------------|----------------|
 | ![Audio Playback](screenshots/AudioPlayback.png) | ![Video Playback](screenshots/VideoPlayback.png) |
 
-| Auth Code Screen | Upload Example |
-|------------------|-------------|
-| ![Auth Code Screen](screenshots/AuthCodeScreen.png) | ![Upload Example](screenshots/UploadExample.png) |
+|| Upload Example |
+|-------------|
+| ![Upload Example](screenshots/UploadExample.png) |
 
-| Folder Creation | Folder List View |
+|| Folder Creation | Folder List View |
 |-----------------|------------------|
 | ![Folder Creation](screenshots/FolderCreation.png) | ![Folder List View](screenshots/FolderListView.png) |
-
-### Android App
-
-| Home Screen | Splash Screen | Dark Mode Folder View |
-|-------------|---------------|-----------------------|
-| ![Home Screen](screenshots/AndroidHomeScreenWithIcon.png) | ![Splash Screen](screenshots/AndroidTelegram-DriveSplash.png) | ![Dark Mode Folder View](screenshots/AndroidDarkModeFolderView.png) |
-
-| Folder List | Transfer Queue | Settings Page |
-|-------------|----------------|---------------|
-| ![Folder List](screenshots/AndroidFolderList.png) | ![Transfer Queue](screenshots/AndroidTransferQue.png) | ![Settings Page](screenshots/AndroidSettingsPage.png) |
 
 ##  Tech Stack
 
@@ -132,7 +97,7 @@ A pre-built **unsigned APK** is available for Android sideloading via the [v2.1.
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/caamer20/Telegram-Drive.git
+    git clone https://github.com/adamramadhn/Telegram-Drive.git
     cd Telegram-Drive
     ```
 
@@ -157,39 +122,6 @@ A pre-built **unsigned APK** is available for Android sideloading via the [v2.1.
 This project is **Free and Open Source Software**. You are free to use, modify, and distribute it.
 
 Licensed under the **MIT License**.
-
 ---
+
 *Disclaimer: This application is not affiliated with Telegram FZ-LLC. Use responsibly and in accordance with Telegram's Terms of Service.*
-
-If you're looking for a version of this app that's optimized for VPNs check out this repo:
-https://github.com/caamer20/Telegram-Drive-ForVPNs
-
-<div align="center">
-  <!-- PayPal -->
-  <div style="margin: 15px 0;">
-    <a href="https://www.paypal.me/Caamer20">
-      <img src="https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png" alt="Donate with PayPal" width="200">
-    </a>
-    <div style="font-size: 14px; margin-top: 8px;">paypal.me/Caamer20</div>
-  </div>
-
-  <!-- Litecoin -->
-  <div style="margin: 15px 0;">
-    <a href="litecoin:ltc1q6wkr5ac4u0pxx4hx7xgwn0gsaku25ws0df73rp">
-      <img src="https://img.shields.io/badge/Donate-LTC-345D9D?style=for-the-badge&logo=litecoin&logoColor=white" alt="Donate LTC">
-    </a>
-    <div style="font-family: monospace; font-size: 13px; margin-top: 8px; word-break: break-all;">
-      ltc1q6wkr5ac4u0pxx4hx7xgwn0gsaku25ws0df73rp
-    </div>
-  </div>
-
-  <!-- Bitcoin -->
-  <div style="margin: 15px 0;">
-    <a href="bitcoin:bc1q5pt7m2fk6w0dzsnf6vvd5k6nw5k44785286ujy">
-      <img src="https://img.shields.io/badge/Donate-BTC-F7931A?style=for-the-badge&logo=bitcoin&logoColor=white" alt="Donate BTC">
-    </a>
-    <div style="font-family: monospace; font-size: 13px; margin-top: 8px; word-break: break-all;">
-      bc1q5pt7m2fk6w0dzsnf6vvd5k6nw5k44785286ujy
-    </div>
-  </div>
-</div>
